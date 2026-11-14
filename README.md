@@ -1,24 +1,38 @@
-# Screenshot Perfect
+# AVN Institute — Student Results Portal
 
-Implement exactly the screenshot and nothing else
+Autonomous Institution Affiliated to JNTUH · B.Tech Examination Results Portal
 
-This project was built with [Lovable](https://lovable.dev).
+## Prerequisites
 
-## Build with Lovable
+- Node.js (v18 or higher recommended)
+- npm or pnpm or bun
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/533eec84-c200-461c-a61e-7e851a6cc017).
+## Getting Started
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+1. Navigate to the project directory:
+```bash
+cd screenshot-perfect
+```
 
-## Development
+2. Install dependencies (if not already installed):
+```bash
+npm install
+```
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+3. Start the development server:
+```bash
 npm run dev
 ```
+
+4. Open your browser and navigate to:
+```
+http://localhost:3000
+```
+*(or the local port printed in the terminal)*
+
+## Scripts
+
+- `npm run dev` - Start local development server
+- `npm run build` - Build the application for production
+- `npm run preview` - Preview the production build locally
+- `npm run test` - Run unit tests with Vitest

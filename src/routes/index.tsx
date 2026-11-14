@@ -1,23 +1,27 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
+import LoginPage from "@/components/portal/LoginPage";
+import Dashboard from "@/components/portal/Dashboard";
+import type { StudentRecord } from "@/data/studentStore";
 
-// The home route ships no og:image, so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
-export const Route = createFileRoute("/")({
+export const Route = createFileRoute("/")(({
+  head: () => ({
+    meta: [
+      { title: "AVN Institute — Student Results Portal" },
+      { name: "description", content: "AVN Institute of Engineering & Technology — B.Tech I Year I Semester Examination Results Portal" },
+    ],
+  }),
   component: Index,
-});
+}));
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
+  const [student, setStudent] = useState<StudentRecord | null>(null);
+
+  const handleLogout = () => setStudent(null);
+
+  if (student) {
+    return <Dashboard student={student} onLogout={handleLogout} />;
+  }
+
+  return <LoginPage onLogin={setStudent} />;
 }

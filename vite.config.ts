@@ -9,10 +9,19 @@
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
+// When NITRO_PRESET env var is set (e.g. on Vercel/Netlify auto-detection), it
+// overrides the preset below — zero-config deploys still work. The explicit
+// "vercel" preset here is the default for local `pnpm build` so the output is
+// always Vercel-compatible unless overridden.
 export default defineConfig({
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
     server: { entry: "server" },
+  },
+  nitro: {
+    // Target Vercel's Build Output API (.vercel/output/).
+    // Set NITRO_PRESET=cloudflare-module in CI if you want Cloudflare instead.
+    preset: "vercel",
   },
 });

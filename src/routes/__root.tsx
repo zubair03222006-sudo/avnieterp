@@ -81,14 +81,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "AVN Institute — Student Results Portal" },
+      { name: "description", content: "AVN Institute of Engineering & Technology — Student Results Portal" },
+      { name: "author", content: "AVN Institute" },
+      { property: "og:title", content: "AVN Institute — Student Results Portal" },
+      { property: "og:description", content: "AVN Institute of Engineering & Technology — B.Tech Examination Results" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       {
